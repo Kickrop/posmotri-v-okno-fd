@@ -21,6 +21,8 @@ html {
 .page {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin:auto;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
