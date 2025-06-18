@@ -27,7 +27,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -98,8 +98,8 @@ ol {
   font-size: 18px;
   border: none;
   color: #fff;
-  border-top: 1px solid rgba(255, 255, 255, .7);
-  border-bottom: 1px solid rgba(255, 255, 255, .7);
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   background-color: transparent;
   appearance: none;
   width: 225px;
@@ -133,8 +133,8 @@ ol {
   margin-right: 5px;
 }
 
-.search-form__label:hover {
-  text-decoration: none;
+.search-form__label:hover:not(:has(.search-form__textfield)) {
+  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -147,7 +147,7 @@ ol {
 }
 
 .title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
@@ -172,7 +172,7 @@ ol {
 
 .content__list-container {
   height: 311px;
-  overflow: scroll;
+  overflow: auto;
   position: relative;
 }
 
@@ -197,25 +197,32 @@ ol {
 .content__video-card-description-container {
   flex-grow: 1;
   overflow: hidden;
+  width: 196px;
 }
 
-.content__video-card-description-container:hover {
+.content__card-link:hover {
   text-decoration: underline solid #fff 1px;
 }
 
-.content__video-card-description {
-  line-height: 16.2px;
-  line-clamp: 3;
-}
-
 .content__video-card-title {
-  display: block;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   text-transform: uppercase;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1;
+  padding-bottom: 6px;
+}
+
+.content__video-card-description {
+  line-height: 16.2px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   overflow: hidden;
 }
 
@@ -227,9 +234,10 @@ ol {
 }
 
 .result__video {
-  object-fit: contain;
-  height: 386px;
-  width: 711px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: center;
 }
 
 .button {
@@ -240,7 +248,7 @@ ol {
   font-weight: 700;
   font-size: 18px;
   text-align: center;
-  height: 34px;
+  min-height: 34px;
   cursor: pointer
 }
 
@@ -280,18 +288,18 @@ ol {
   cursor: pointer
 }
 
-.content__list-item:active {
+.content__card-link:active {
   background-color: rgba(84, 80, 80, 1);
 }
 
-.content__list-item:hover {
+.content__card-link:hover {
   text-decoration: underline solid #fff 1px;
 }
 
-.content__list-item:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__list-item:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
 }
