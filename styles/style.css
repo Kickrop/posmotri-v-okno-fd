@@ -68,10 +68,8 @@ ol {
 .content {
   display: grid;
   grid-template-columns: 711px 399px;
-  grid-template-rows: 534px;
   gap: 30px;
   align-items: flex-end;
-  height: 534px;
   justify-content: center;
 }
 
@@ -99,7 +97,7 @@ ol {
   font-weight: 400;
   font-size: 18px;
   border: none;
-  color: rgba(255, 255, 255, .7);
+  color: #fff;
   border-top: 1px solid rgba(255, 255, 255, .7);
   border-bottom: 1px solid rgba(255, 255, 255, .7);
   background-color: transparent;
